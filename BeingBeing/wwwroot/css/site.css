@@ -33,3 +33,24 @@ body {
         display: none;
     }
 }
+
+/*Header Styles*/
+
+#lead1 {
+    display:none;
+}
+
+#changeText {
+    color:red;
+}
+
+#findout {
+    display:none;
+}
+.weatherbuttons .btn {
+    background-color:white;
+}
+.locationbuttons .btn {
+    background-color: white;
+}
+
