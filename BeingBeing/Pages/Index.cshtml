@@ -9,70 +9,78 @@
     <div class="lead">Did I have a <span id="changeText">Perfect</span> Day  <span id="findout"><span class="glyphicon glyphicon-arrow-right"></span> Find out why and maximize your great days!</span></div>
 </div>
 <h2>How do you feel</h2>
-<div class="stateinput">
-    <button type="button" class="btn btn-success" value="Good/Fine" id="b1">Good/Fine</button>
-    <button type="button" class="btn btn-success" value="Confident" id="b2">Confident</button>
-    <button type="button" class="btn btn-success" value="Content" id="b3">Content</button>
-    <button type="button" class="btn btn-success" value="Excited" id="b4">Excited</button>
-    <button type="button" class="btn btn-success" value="Happy" id="b5">Happy</button>
-    <button type="button" class="btn btn-success" value="Motivated" id="b6">Motivated</button>
-    <button type="button" class="btn btn-success" value="Proud" id="b7">Proud</button>
-</div>
+<div class="form-group stateinput">
+    <div class="good">
+        <button type="button" class="btn" value="Fulfilled"><i class="em em-relieved"></i> Fulfilled</button>
+        <button type="button" class="btn" value="Happy"><i class="em em-smile"></i> Happy</button>
+        <button type="button" class="btn" value="In The Zone"><i class="em em-bangbang"></i> In The Zone</button>
+        <button type="button" class="btn" value="Okay"><i class="em em-neutral_face"></i> Okay</button>
+        <button type="button" class="btn" value="Productive"><i class="em em---1"></i> Productive</button>
+    </div>
+    <div class="bad">
+        <button type="button" class="btn" value="Anxious"><i class="em em-worried"></i> Anxious</button>
+        <button type="button" class="btn" value="Bored"><i class="em em-unamused"></i> Bored</button>
+        <button type="button" class="btn" value="Hungry"><i class="em em-pizza"></i> Hungry</button>
+        <button type="button" class="btn" value="Sad"><i class="em em-white_frowning_face"></i> Sad</button>
+        <button type="button" class="btn" value="Sick"><i class="em em-face_with_open_mouth_vomiting"></i> Sick</button>
+        <button type="button" class="btn" value="Tired"><i class="em em-sleeping"></i> Tired</button>
+        <button type="button" class="btn" value="Unproductive"><i class="em em--1"></i> Unproductive</button>
+    </div>
+    </div>
 <div id="stateform" style="display:none;">
-    <div>
-        <button type="button" class="btn btn-success">Submit</button>
-        <button type="button" class="btn btn-success" id="close">Close</button>
-        <h3 id="statetitel"></h3>
-    </div>
+
     <h4>Weather?</h4>
-    <div class="weatherbuttons">
-        <button type="button" class="btn" value="Sunny" id="w1"><i class="em em-sunny"></i> Sunny</button>
-        <button type="button" class="btn" value="Overcast" id="w2"><i class="em em-barely_sunny"></i> Overcast</button>
-        <button type="button" class="btn" value="Raining" id="w3"><i class="em em-rain_cloud"></i> Raining</button>
-        <button type="button" class="btn" value="Snowing" id="w4"><i class="em em-snow_cloud"></i> Snowing</button>
+    <div class="form-group weather">
+        <button type="button" class="btn" value="Sunny"><i class="em em-sunny"></i> Sunny</button>
+        <button type="button" class="btn" value="Overcast"><i class="em em-barely_sunny"></i> Overcast</button>
+        <button type="button" class="btn" value="Raining"><i class="em em-rain_cloud"></i> Raining</button>
+        <button type="button" class="btn" value="Snowing"><i class="em em-snow_cloud"></i> Snowing</button>
     </div>
-   
-    <div style="margin-bottom:15px;"></div> 
+    <div class="form-group temperature">
+        <button type="button" class="btn freezing" value="Freezing">Freezing</button>
+        <button type="button" class="btn cold" value="Cold">Cold</button>
+        <button type="button" class="btn pleasent" value="Pleasent">Pleasent</button>
+        <button type="button" class="btn warm" value="Warm">Warm</button>
+        <button type="button" class="btn hot" value="Hot">Hot</button>
+    </div>
+
     <h4>Location</h4>
-    <div class="locationbuttons">
-            <div class="locationbuttons">
-                <button type="button" class="btn" value="Home" id="l1"><i class="em em-house"></i> Home</button>
-                <button type="button" class="btn" value="Work" id="l2"><i class="em em-office"></i> Work</button>
-                <button type="button" class="btn" value="Vacation" id="l3"><i class="em em-beach_with_umbrella"></i> Vacation</button>
-                <button type="button" class="btn" value="Out" id="l4"><i class="em em-man_dancing"></i> Out/Social</button>
-            </div>
-           
-        
-            <form method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <input asp-for="States.State" class="form-control" id="statetitle" />
-                <input asp-for="States.Weather" class="form-control" id="weather" />
-                <input asp-for="States.Location" class="form-control" id="location" />
+    <div class="form-grop locationbuttons">
+        <button type="button" class="btn" value="Home"><i class="em em-house"></i> Home</button>
+        <button type="button" class="btn" value="Work"><i class="em em-office"></i> Work</button>
+        <button type="button" class="btn" value="Vacation"><i class="em em-beach_with_umbrella"></i> Vacation</button>
+        <button type="button" class="btn" value="Out"><i class="em em-man_dancing"></i> Out/Social</button>
+    </div>
 
 
 
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-                <div class="form-group">
-                    <label asp-for="States.Notes" class="control-label"></label>
-                    <textarea asp-for="States.Notes" class="form-control"></textarea>
-                    <span asp-validation-for="States.Notes" class="text-danger"></span>
-                </div>
+        <input asp-for="States.State" class="form-control" id="statetitle" />
+        <input asp-for="States.Weather" class="form-control" id="weather" />
+        <input asp-for="States.Location" class="form-control" id="location" />
+        <input asp-for="States.Temperature" id="temperature" class="form-control" />
 
-                <div class="form-group">
-                    <label asp-for="States.DateState" class="control-label">When</label>
-                    <input asp-for="States.DateState" type="datetime-local" id="DateState" class="form-control" value="2017-06-01T05:30" />
-                    <span asp-validation-for="States.DateState" class="text-danger"></span>
-                </div>
 
-                <div class="form-group">
-                    <label asp-for="States.Temperature" class="control-label"></label>
-                    <input asp-for="States.Temperature" class="form-control" />
-                    <span asp-validation-for="States.Temperature" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </form>
+
+
+        <div class="form-group">
+            <label asp-for="States.Notes" class="control-label"></label>
+            <textarea asp-for="States.Notes" class="form-control"></textarea>
+            <span asp-validation-for="States.Notes" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="States.DateState" class="control-label">When</label>
+            <input asp-for="States.DateState" type="datetime-local" id="datestate" class="form-control" />
+            <span asp-validation-for="States.DateState" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </form>
 </div>
 

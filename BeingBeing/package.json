@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "devDependencies": {
+    "moment": "2.22.1",
+    "moment-timezone": "0.5.14"
+  }
+}
