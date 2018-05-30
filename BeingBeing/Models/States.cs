@@ -10,7 +10,7 @@ namespace BeingBeing.Models
         public int ID { get; set; }
         public string State { get; set; }
         public string Notes { get; set; }
-        public DateTime DateState { get; set; } = DateTime.Now;
+        public DateTime DateState { get; set; }
         public string Weather { get; set; }
         public string Temperature { get; set; }
         public string Location { get; set; }

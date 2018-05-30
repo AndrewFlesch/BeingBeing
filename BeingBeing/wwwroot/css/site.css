@@ -78,6 +78,16 @@ body {
 .bad button:hover {
     background-color: lightcoral;
 }
+
+.sick button {
+    border: 1px solid gray;
+    box-shadow: lightgray 2px 2px;
+    margin: 2px;
+}
+
+.sick button:hover {
+        background-color: lightgray;
+}
 .temperature button {
     box-shadow: lightgray 2px 2px;
     margin:5px;

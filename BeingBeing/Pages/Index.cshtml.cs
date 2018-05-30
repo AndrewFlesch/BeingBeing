@@ -24,8 +24,9 @@ namespace BeingBeing.Pages
 
         [BindProperty]
         public States States { get; set; }
+        public Doings Doings { get; set; }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAddStateAsync()
         {
             if (!ModelState.IsValid)
             {
@@ -33,6 +34,20 @@ namespace BeingBeing.Pages
             }
 
             _context.States.Add(States);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("./Index");
+        }
+
+
+        public async Task<IActionResult> OnPostAddDoingAsync()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            _context.Doings.Add(Doings);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
