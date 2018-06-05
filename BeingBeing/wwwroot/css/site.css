@@ -50,33 +50,37 @@ body {
 .btn {
     background:none;
 }
-.good .feelselect {
-    box-shadow: gray 0px 0px !important;
-    border: 1px solid black !important;
-    background-color: lightgreen !important;
+
+
+.buttonheader {
+    font-size: 18px;
+    display:inline;
+    font-weight:bold;
 }
 
-.bad .feelselect {
-    box-shadow: gray 0px 0px !important;
-    border: 1px solid black !important;
-    background-color: lightcoral !important;
+.entrysection {
+  border-bottom:2px solid black;
+  margin-bottom:5px;
+  padding-bottom:5px;
+  max-width:600px;
+}
+.entrysection button {
+    border: 1px solid gray;
+    box-shadow: lightgray 1px 1px;
+    margin: 1px;
+
+}
+.modal-title {
+display:inline;
 }
 
-.good button {
-    border: 1px solid green;
-    box-shadow: lightgray 2px 2px;
-    margin: 2px;
+.buttonheader {
+    font-size: 16px;
+    display: block;
 }
-.good button:hover {
-    background-color:lightgreen;
-}
-.bad button {
-    border: 1px solid red;
-    box-shadow: lightgray 2px 2px;
-    margin: 2px;
-}
-.bad button:hover {
-    background-color: lightcoral;
+
+.entrysection button:hover {
+    background-color: lightblue;
 }
 
 .sick button {
@@ -123,4 +127,14 @@ body {
 .hot {
     background-color:red;
     color:white;
+}
+.food {
+    border:1px solid gray;
+    padding:5px;
+    display:inline;
+}
+.foodbtn {
+    border: 1px solid gray;
+    padding: 0px;
+    margin:0px;
 }

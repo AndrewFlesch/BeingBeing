@@ -23,9 +23,17 @@ namespace BeingBeing.Pages
         }
 
         [BindProperty]
-        public States States { get; set; }
-        public Doings Doings { get; set; }
-
+        public Appetite Appetite { get; set; }
+        public Consuming Consuming { get; set; }
+        public EmotionalStates EmotionalStates { get; set; }
+        public Exercise Exercise { get; set; }
+        public Poop Poop { get; set; }
+        public Sickness Sickness { get; set; }
+        public Sleep Sleep { get; set; }
+        public Social Social { get; set; }
+        public Weather Weather { get; set; }
+        public Working Working { get; set; }
+       
         public async Task<IActionResult> OnPostAddStateAsync()
         {
             if (!ModelState.IsValid)
@@ -33,7 +41,7 @@ namespace BeingBeing.Pages
                 return Page();
             }
 
-            _context.States.Add(States);
+            _context.Appetite.Add(Appetite);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
@@ -47,7 +55,7 @@ namespace BeingBeing.Pages
                 return Page();
             }
 
-            _context.Doings.Add(Doings);
+            _context.EmotionalStates.Add(EmotionalStates);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

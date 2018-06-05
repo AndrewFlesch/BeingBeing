@@ -8,77 +8,236 @@
     <h1>Why?</h1>
     <div class="lead">Did I have a <span id="changeText">Perfect</span> Day  <span id="findout"><span class="glyphicon glyphicon-arrow-right"></span> Find out why and maximize your great days!</span></div>
 </div>
-<h3>I'm feeling: <span id="statetitleh3"></span></h3>
-<div class="form-group stateinput">
-    <div class="good">
-        <button type="button" class="btn" value="Very Full"><i class="em em-relieved"></i> Very Full</button>
-        <button type="button" class="btn" value="Full"><i class="em em-smile"></i> Full</button>
-        <button type="button" class="btn" value="Content">Content</button>
-    </div>
-    <div class="bad">
-        <button type="button" class="btn" value="Hungry"><i class="em em-worried"></i> Hungry</button>
-        <button type="button" class="btn" value="Very Hungry"><i class="em em-unamused"></i> Very Hungry</button>
-        <button type="button" class="btn" value="Angry Hungry"><i class="em em-angry"></i> Angry Hungry</button>
-        <button type="button" class="btn" value="Thristy"><i class="em em-glass_of_milk"></i> Thristy</button>
+<div class="entrysection">
+    <div class="buttonheader">Mood?</div>
+    <button type="button" class="btn" value="Anxious" data-toggle="modal" data-target="#moodModal">Anxious</button>
+    <button type="button" class="btn" value="Fine" data-toggle="modal" data-target="#moodModal">Fine</button>
+    <button type="button" class="btn" value="Happy" data-toggle="modal" data-target="#moodModal">Happy</button>
+    <button type="button" class="btn" value="Lazy" data-toggle="modal" data-target="#moodModal">Lazy</button>
+    <button type="button" class="btn" value="Productive" data-toggle="modal" data-target="#moodModal">Productive</button>
+    <button type="button" class="btn" value="Sad" data-toggle="modal" data-target="#moodModal">Sad</button>
+</div>
+<div class="entrysection">
+    <div class="buttonheader">Apetite?</div>
+    <button type="button" class="btn" value="Full" data-toggle="modal" data-target="#appetiteModal">Full/Content</button>
+    <button type="button" class="btn" value="Hungry" data-toggle="modal" data-target="#appetiteModal">Hungry</button>
+    <button type="button" class="btn" value="Starving" data-toggle="modal" data-target="#appetiteModal">Starving</button>
+    <button type="button" class="btn" value="Thristy" data-toggle="modal" data-target="#appetiteModal">Thristy</button>
+</div>
+<div class="entrysection">
+    <div class="buttonheader">Sick?</div>
+    <button type="button" class="btn" value="Nauseous" data-toggle="modal" data-target="#sickModal">Nauseious</button>
+    <button type="button" class="btn" value="Gassy" data-toggle="modal" data-target="#sickModal">Gassy</button>
+    <button type="button" class="btn" value="Heartburn" data-toggle="modal" data-target="#sickModal">Heartburn</button>
+    <button type="button" class="btn" value="Headache" data-toggle="modal" data-target="#sickModal">Headache</button>
+    <button type="button" class="btn" value="Tired" data-toggle="modal" data-target="#sickModal">Tired</button>
+</div>
+<div class="entrysection">
+    <div class="buttonheader">Doing?</div>
+    <button type="button" class="btn" value="Nauseous" data-toggle="modal" data-target="#eatingModal">Eating</button>
+    <button type="button" class="btn" value="Nauseous" data-toggle="modal" data-target="#drinkingModal">Drinking</button>
+    <button type="button" class="btn" value="Gassy" data-toggle="modal" data-target="#stateModal">Exercising</button>
+    <button type="button" class="btn" value="Heartburn" data-toggle="modal" data-target="#stateModal">Pooping</button>
+    <button type="button" class="btn" value="Headache" data-toggle="modal" data-target="#stateModal">Socializing</button>
+    <button type="button" class="btn" value="Tired" data-toggle="modal" data-target="#stateModal">Working</button>
+    <button type="button" class="btn" value="Tired" data-toggle="modal" data-target="#stateModal">Sleeping</button>
+
+</div>
+<!-- Modal for Mood-->
+<div class="modal fade" id="moodModal" tabindex="-1" role="dialog" aria-labelledby="moodModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="stateModalLabel"></h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="entrysection">
+                    <div class="buttonheader">Location?</div>
+                    <button type="button" class="btn" value="Home">Home</button>
+                    <button type="button" class="btn" value="Work">Work</button>
+                    <button type="button" class="btn" value="Vacation">Vacation</button>
+                    <button type="button" class="btn" value="Out Fun">Out Fun</button>
+                    <button type="button" class="btn" value="Out Errands">Out Errands</button>
+                    <button type="button" class="btn" value="Out Other">Out Other</button>
+                </div>
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="EmotionalStates.EmotionalState" class="form-control" id="EmotionalStateTitle" />
+                    <input type="hidden" asp-for="EmotionalStates.Location" class="form-control" id="location" />
+
+                    <div class="form-group">
+                        <label asp-for="EmotionalStates.Notes" class="control-label"></label>
+                        <textarea asp-for="EmotionalStates.Notes" class="form-control"></textarea>
+                        <span asp-validation-for="EmotionalStates.Notes" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="EmotionalStates.DateState" class="control-label">When</label>
+                        <input asp-for="EmotionalStates.DateState" type="datetime-local" id="datestate" class="form-control" />
+                        <span asp-validation-for="EmotionalStates.DateState" class="text-danger"></span>
+                    </div>
+                    <input type="submit" asp-page-handler="AddState" value="Submit" class="btn btn-default" />
+
+                </form>
 
 
-    </div>
-    <div class="sick">
-        <button type="button" class="btn" value="Nauseous"><i class="em em-face_with_open_mouth_vomiting"></i> Nauseious</button>
-        <button type="button" class="btn" value="Gassy"><i class="em em-bomb"></i> Gassy</button>
-        <button type="button" class="btn" value="Heartburn"><i class="em em-pill"></i> Heartburn</button>
-        <button type="button" class="btn" value="Headache"><i class="em em-dizzy_face"></i> Headache</button>
-        <button type="button" class="btn" value="Tired"><i class="em em-sleeping"></i> Tired</button>
+            </div>
+
+        </div>
     </div>
 </div>
-<div id="stateform" style="display:none;">
 
-    <h3>The weather is: <span id="weatherh3"></span></h3>
-    <div class="form-group weather">
-        <button type="button" class="btn" value="Sunny"><i class="em em-sunny"></i> Sunny</button>
-        <button type="button" class="btn" value="Overcast"><i class="em em-barely_sunny"></i> Overcast</button>
-        <button type="button" class="btn" value="Raining"><i class="em em-rain_cloud"></i> Raining</button>
-        <button type="button" class="btn" value="Snowing"><i class="em em-snow_cloud"></i> Snowing</button>
-    </div>
-    <h3>The temperature is: <span id="temph3"></span></h3>
-    <div class="form-group temperature">
-        <button type="button" class="btn freezing" value="Freezing">Freezing</button>
-        <button type="button" class="btn cold" value="Cold">Cold</button>
-        <button type="button" class="btn pleasent" value="Pleasent">Pleasent</button>
-        <button type="button" class="btn warm" value="Warm">Warm</button>
-        <button type="button" class="btn hot" value="Hot">Hot</button>
-    </div>
+<!-- End Modal for Mood-->
+<!-- Modal for Appetite-->
+<div class="modal fade" id="appetiteModal" tabindex="-1" role="dialog" aria-labelledby="appetiteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="stateModalLabel"></h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="entrysection">
+                    <div class="buttonheader">Location?</div>
+                    <button type="button" class="btn" value="Home">Home</button>
+                    <button type="button" class="btn" value="Work">Work</button>
+                    <button type="button" class="btn" value="Vacation">Vacation</button>
+                    <button type="button" class="btn" value="Out Fun">Out Fun</button>
+                    <button type="button" class="btn" value="Out Errands">Out Errands</button>
+                    <button type="button" class="btn" value="Out Other">Out Other</button>
+                </div>
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Appetite.State" class="form-control" id="statetitle" />
+                    <input type="hidden" asp-for="Appetite.Location" class="form-control" id="location" />
 
-    <h3>My location is: <span id="loch3"></span></h3>
-    <div class="form-grop locationbuttons">
-        <button type="button" class="btn" value="Home"><i class="em em-house"></i> Home</button>
-        <button type="button" class="btn" value="Work"><i class="em em-office"></i> Work</button>
-        <button type="button" class="btn" value="Vacation"><i class="em em-beach_with_umbrella"></i> Vacation</button>
-        <button type="button" class="btn" value="Out"><i class="em em-man_dancing"></i> Out/Social</button>
-    </div>
-    
-    <form method="post">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <input type="hidden" asp-for="States.State" class="form-control" id="statetitle" />
-        <input type="hidden" asp-for="States.Weather" class="form-control" id="weather" />
-        <input type="hidden" asp-for="States.Location" class="form-control" id="location" />
-        <input type="hidden" asp-for="States.Temperature" id="temperature" class="form-control" />
+                    <div class="form-group">
+                        <label asp-for="Appetite.Notes" class="control-label"></label>
+                        <textarea asp-for="Appetite.Notes" class="form-control"></textarea>
+                        <span asp-validation-for="Appetite.Notes" class="text-danger"></span>
+                    </div>
 
-        <div class="form-group">
-            <label asp-for="States.Notes" class="control-label"></label>
-            <textarea asp-for="States.Notes" class="form-control"></textarea>
-            <span asp-validation-for="States.Notes" class="text-danger"></span>
+                    <div class="form-group">
+                        <label asp-for="Appetite.DateState" class="control-label">When</label>
+                        <input asp-for="Appetite.DateState" type="datetime-local" id="datestate" class="form-control" />
+                        <span asp-validation-for="Appetite.DateState" class="text-danger"></span>
+                    </div>
+                    <input type="submit" asp-page-handler="AddState" value="Submit" class="btn btn-default" />
+
+                </form>
+
+
+            </div>
+
         </div>
-
-        <div class="form-group">
-            <label asp-for="States.DateState" class="control-label">When</label>
-            <input asp-for="States.DateState" type="datetime-local" id="datestate" class="form-control" />
-            <span asp-validation-for="States.DateState" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <input type="submit" asp-page-handler="AddState" value="Submit" class="btn btn-default" />
-        </div>
-    </form>
+    </div>
 </div>
 
+<!-- End Modal for Appetite-->
+<!-- Modal for Sick-->
+<div class="modal fade" id="sickModal" tabindex="-1" role="dialog" aria-labelledby="sickModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="stateModalLabel"></h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="entrysection">
+                    <div class="buttonheader">Location?</div>
+                    <button type="button" class="btn" value="Home">Home</button>
+                    <button type="button" class="btn" value="Work">Work</button>
+                    <button type="button" class="btn" value="Vacation">Vacation</button>
+                    <button type="button" class="btn" value="Out Fun">Out Fun</button>
+                    <button type="button" class="btn" value="Out Errands">Out Errands</button>
+                    <button type="button" class="btn" value="Out Other">Out Other</button>
+                </div>
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Sickness.Illness" class="form-control" id="statetitle" />
+                    <input type="hidden" asp-for="Sickness.Location" class="form-control" id="location" />
+
+                    <div class="form-group">
+                        <label asp-for="Sickness.Notes" class="control-label"></label>
+                        <textarea asp-for="Sickness.Notes" class="form-control"></textarea>
+                        <span asp-validation-for="Sickness.Notes" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Sickness.DateState" class="control-label">When</label>
+                        <input asp-for="Sickness.DateState" type="datetime-local" id="datestate" class="form-control" />
+                        <span asp-validation-for="Sickness.DateState" class="text-danger"></span>
+                    </div>
+                    <input type="submit" asp-page-handler="AddState" value="Submit" class="btn btn-default" />
+
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- End Modal for Sick-->
+
+<!-- Modal for Eating-->
+<div class="modal fade" id="eatingModal" tabindex="-1" role="dialog" aria-labelledby="eatingModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="stateModalLabel"></h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="entrysection food">
+                    <div class="buttonheader">Eating? Click button to add portions</div>
+                    <button type="button" class="btn" value="Vegetable">Vegetable: 0</button>
+                    <button type="button" class="btn" value="">Meat: 0</button>
+                </div>
+                <div class="entrysection">
+                    <div class="buttonheader">Location?</div>
+                    <button type="button" class="btn" value="Home">Home</button>
+                    <button type="button" class="btn" value="Work">Work</button>
+                    <button type="button" class="btn" value="Vacation">Vacation</button>
+                    <button type="button" class="btn" value="Out Fun">Out Fun</button>
+                    <button type="button" class="btn" value="Out Errands">Out Errands</button>
+                    <button type="button" class="btn" value="Out Other">Out Other</button>
+                </div>
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Sickness.Illness" class="form-control" id="statetitle" />
+                    <input type="hidden" asp-for="Sickness.Location" class="form-control" id="location" />
+
+                    <div class="form-group">
+                        <label asp-for="Sickness.Notes" class="control-label"></label>
+                        <textarea asp-for="Sickness.Notes" class="form-control"></textarea>
+                        <span asp-validation-for="Sickness.Notes" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Sickness.DateState" class="control-label">When</label>
+                        <input asp-for="Sickness.DateState" type="datetime-local" id="datestate" class="form-control" />
+                        <span asp-validation-for="Sickness.DateState" class="text-danger"></span>
+                    </div>
+                    <input type="submit" asp-page-handler="AddState" value="Submit" class="btn btn-default" />
+
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- End Modal for Sick-->

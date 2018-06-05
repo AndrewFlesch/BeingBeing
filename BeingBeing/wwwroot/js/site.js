@@ -2,7 +2,7 @@
 
 //Get Day and Time and default location
 
-function setDefaultTemperature() {
+/* function setDefaultTemperature() {
     let month = new Date().getMonth();
     if (month <= 3 && month == 11) {
         $("#temperature").val("Cold");
@@ -26,6 +26,7 @@ function setDefaultTemperature() {
 }
 };
 
+
 function defaultLocation() {
     let isweekday = new Date().getDay();
     if (isweekday != 0 && 1) {
@@ -43,7 +44,7 @@ function defaultLocation() {
 
     };
 };
-
+*/
 var elem2 = document.getElementById("findout");
 var timeout = setTimeout(findout, 6000);
 function findout() {
@@ -64,32 +65,26 @@ function change() {
     }
 }
 
-$(".stateinput .btn").click(function () {
-    defaultLocation();
-    setDefaultTemperature();
-    $("#stateform").css("display", "block");
-    $("#statetitle").val($(this).val());
-    $("#statetitleh3").text($(this).val());
+$(".entrysection food .btn").click(function () {
+    let item = $(this).val();
+    let itemnameqty = item.split(":");
+    let itemname = itemnameqty[0];
+    let itemqty = itemnameqty[1];
+    let headerstring = "I'm " + header;
+    $(".modal-title").text(headerstring);
     $("#datestate").val(moment().format('YYYY-MM-DDTHH:mm:ss'));
     $(".stateinput").css("display", "none");
     $(this).addClass("feelselect");
     
 });
 
-$(".weather .btn").click(function () {
-    $(".weather button").css("border", "none");
-    $(this).css("border", "solid 1px black");
-    $(".weather").css("display", "none");
-    $("#weather").val($(this).val());
-    $("#weatherh3").text($(this).val());
-});
-
-$(".temperature .btn").click(function () {
-    $(".temperature button").css("border", "none");
-    $(this).css("border", "solid 1px black");
-    $(".temperature").css("display", "none");
-    $("#temperature").val($(this).val());
-    $("#temph3").text($(this).val());
+$(".entrysection .btn").click(function () {
+    let header = $(this).val();
+    let headerstring = "I'm " + header;
+    $(".modal-title").text(headerstring);
+    $("#datestate").val(moment().format('YYYY-MM-DDTHH:mm:ss'));
+    $(".stateinput").css("display", "none");
+    $(this).addClass("feelselect");
 
 });
 

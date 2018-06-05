@@ -11,32 +11,15 @@ using System;
 namespace BeingBeing.Migrations
 {
     [DbContext(typeof(BeingBeingContext))]
-    partial class BeingBeingContextModelSnapshot : ModelSnapshot
+    [Migration("20180605162754_AddingModels")]
+    partial class AddingModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.0.2-rtm-10011")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("BeingBeing.Models.Appetite", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("DateState");
-
-                    b.Property<string>("Location");
-
-                    b.Property<string>("Notes");
-
-                    b.Property<string>("State");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Appetite");
-                });
 
             modelBuilder.Entity("BeingBeing.Models.Consuming", b =>
                 {
@@ -106,6 +89,26 @@ namespace BeingBeing.Migrations
                     b.ToTable("Consumings");
                 });
 
+            modelBuilder.Entity("BeingBeing.Models.Doings", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("DateState");
+
+                    b.Property<string>("Doing");
+
+                    b.Property<int>("Duration");
+
+                    b.Property<string>("Intensity");
+
+                    b.Property<string>("Notes");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Doings");
+                });
+
             modelBuilder.Entity("BeingBeing.Models.EmotionalStates", b =>
                 {
                     b.Property<int>("ID")
@@ -124,26 +127,6 @@ namespace BeingBeing.Migrations
                     b.ToTable("EmotionalStates");
                 });
 
-            modelBuilder.Entity("BeingBeing.Models.Exercise", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("DateState");
-
-                    b.Property<string>("Doing");
-
-                    b.Property<int>("Duration");
-
-                    b.Property<string>("Intensity");
-
-                    b.Property<string>("Notes");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Exercise");
-                });
-
             modelBuilder.Entity("BeingBeing.Models.Poop", b =>
                 {
                     b.Property<int>("ID")
@@ -158,24 +141,6 @@ namespace BeingBeing.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Poop");
-                });
-
-            modelBuilder.Entity("BeingBeing.Models.Sickness", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("DateState");
-
-                    b.Property<string>("Illness");
-
-                    b.Property<string>("Location");
-
-                    b.Property<string>("Notes");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Sickness");
                 });
 
             modelBuilder.Entity("BeingBeing.Models.Sleep", b =>
@@ -194,56 +159,22 @@ namespace BeingBeing.Migrations
                     b.ToTable("Sleep");
                 });
 
-            modelBuilder.Entity("BeingBeing.Models.Social", b =>
+            modelBuilder.Entity("BeingBeing.Models.States", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("DateState");
 
-                    b.Property<int>("Duration");
+                    b.Property<string>("Location");
 
                     b.Property<string>("Notes");
 
-                    b.Property<string>("What");
-
-                    b.Property<string>("Where");
+                    b.Property<string>("State");
 
                     b.HasKey("ID");
 
-                    b.ToTable("Social");
-                });
-
-            modelBuilder.Entity("BeingBeing.Models.Weather", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Description");
-
-                    b.Property<string>("Temperature");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Weather");
-                });
-
-            modelBuilder.Entity("BeingBeing.Models.Working", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("DateState");
-
-                    b.Property<int>("Duration");
-
-                    b.Property<string>("Notes");
-
-                    b.Property<string>("What");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Working");
+                    b.ToTable("States");
                 });
 #pragma warning restore 612, 618
         }
