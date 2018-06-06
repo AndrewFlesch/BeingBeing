@@ -8,6 +8,7 @@ namespace BeingBeing.Models
     public class Sleep
     {
         public int ID { get; set; }
+        public string Cat { get; set; } = "Sleep";
         public string Type { get; set; }
         public string Quality { get; set; }
         public int Duration { get; set; }

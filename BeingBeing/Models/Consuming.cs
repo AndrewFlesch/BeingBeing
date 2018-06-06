@@ -8,6 +8,7 @@ namespace BeingBeing.Models
     public class Consuming
     {
         public int ID { get; set; }
+        public string Cat { get; set; } = "Eating/Drinking";
         public string Type { get; set; }
         public int MyProperty { get; set; }
         public int Vegetable { get; set; }
@@ -17,7 +18,7 @@ namespace BeingBeing.Models
         public int Cheese { get; set; }
         public int Yogurt { get; set; }
         public int Fruit { get; set; }
-        public int Break { get; set; }
+        public int Bread { get; set; }
         public int Rice { get; set; }
         public int Potatoes { get; set; }
         public int Pasta { get; set; }

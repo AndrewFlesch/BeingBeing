@@ -11,9 +11,10 @@ using System;
 namespace BeingBeing.Migrations
 {
     [DbContext(typeof(BeingBeingContext))]
-    partial class BeingBeingContextModelSnapshot : ModelSnapshot
+    [Migration("20180606142403_typo")]
+    partial class typo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,8 +25,6 @@ namespace BeingBeing.Migrations
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Cat");
 
                     b.Property<DateTime>("DateState");
 
@@ -52,8 +51,6 @@ namespace BeingBeing.Migrations
                     b.Property<int>("Bread");
 
                     b.Property<int>("Butter");
-
-                    b.Property<string>("Cat");
 
                     b.Property<int>("Cheese");
 
@@ -115,8 +112,6 @@ namespace BeingBeing.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Cat");
-
                     b.Property<DateTime>("DateState");
 
                     b.Property<string>("Location");
@@ -135,8 +130,6 @@ namespace BeingBeing.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Cat");
-
                     b.Property<DateTime>("DateState");
 
                     b.Property<int>("Duration");
@@ -152,32 +145,10 @@ namespace BeingBeing.Migrations
                     b.ToTable("Exercise");
                 });
 
-            modelBuilder.Entity("BeingBeing.Models.Pills", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Cat");
-
-                    b.Property<DateTime>("DateState");
-
-                    b.Property<string>("Dose");
-
-                    b.Property<string>("Notes");
-
-                    b.Property<string>("Type");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Pills");
-                });
-
             modelBuilder.Entity("BeingBeing.Models.Poop", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Cat");
 
                     b.Property<string>("Color");
 
@@ -194,8 +165,6 @@ namespace BeingBeing.Migrations
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Cat");
 
                     b.Property<DateTime>("DateState");
 
@@ -215,8 +184,6 @@ namespace BeingBeing.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Cat");
-
                     b.Property<int>("Duration");
 
                     b.Property<string>("Quality");
@@ -232,8 +199,6 @@ namespace BeingBeing.Migrations
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Cat");
 
                     b.Property<DateTime>("DateState");
 
@@ -255,8 +220,6 @@ namespace BeingBeing.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Cat");
-
                     b.Property<string>("Description");
 
                     b.Property<string>("Temperature");
@@ -270,8 +233,6 @@ namespace BeingBeing.Migrations
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Cat");
 
                     b.Property<DateTime>("DateState");
 

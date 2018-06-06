@@ -65,26 +65,30 @@ function change() {
     }
 }
 
-$(".entrysection food .btn").click(function () {
-    let item = $(this).val();
-    let itemnameqty = item.split(":");
-    let itemname = itemnameqty[0];
-    let itemqty = itemnameqty[1];
-    let headerstring = "I'm " + header;
-    $(".modal-title").text(headerstring);
-    $("#datestate").val(moment().format('YYYY-MM-DDTHH:mm:ss'));
-    $(".stateinput").css("display", "none");
-    $(this).addClass("feelselect");
-    
+$(".food .btn").click(function () {
+    let item = $(this).text().split(":");
+    let itemname = item[0];
+    let itemqty = item[1];
+    let newitemqty = ++itemqty
+    $(this).text(itemname + ":" + newitemqty);
+    $(this).val(newitemqty);
+    let inputid = "#" + this.name;
+    $(inputid).val(newitemqty);
 });
 
 $(".entrysection .btn").click(function () {
+    let inputtype = "#" + this.name;
+    $(inputtype).val($(this).val());
     let header = $(this).val();
     let headerstring = "I'm " + header;
     $(".modal-title").text(headerstring);
-    $("#datestate").val(moment().format('YYYY-MM-DDTHH:mm:ss'));
-    $(".stateinput").css("display", "none");
-    $(this).addClass("feelselect");
+    $("input[name='type']").val($(this).val());
+    $("input[name='datestate']").val(moment().format('YYYY-MM-DDTHH:mm:ss'));
+
+});
+
+$(".location .btn").click(function () {
+    $("input[name='location']").val($(this).val());
 
 });
 

@@ -27,6 +27,7 @@ namespace BeingBeing.Pages
         public Consuming Consuming { get; set; }
         public EmotionalStates EmotionalStates { get; set; }
         public Exercise Exercise { get; set; }
+        public Pills Pills { get; set; }
         public Poop Poop { get; set; }
         public Sickness Sickness { get; set; }
         public Sleep Sleep { get; set; }
@@ -34,7 +35,7 @@ namespace BeingBeing.Pages
         public Weather Weather { get; set; }
         public Working Working { get; set; }
        
-        public async Task<IActionResult> OnPostAddStateAsync()
+        public async Task<IActionResult> OnPostAddAppetiteAsync()
         {
             if (!ModelState.IsValid)
             {

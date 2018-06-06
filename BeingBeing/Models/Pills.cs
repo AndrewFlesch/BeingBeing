@@ -5,13 +5,12 @@ using System.Threading.Tasks;
 
 namespace BeingBeing.Models
 {
-    public class Social
+    public class Pills
     {
         public int ID { get; set; }
-        public string Cat { get; set; } = "Social";
+        public string Cat { get; set; } = "Medicine";
         public string Type { get; set; }
-        public string Where { get; set; }
-        public int Duration { get; set; }
+        public string Dose { get; set; }
         public string Notes { get; set; }
         public DateTime DateState { get; set; }
     }

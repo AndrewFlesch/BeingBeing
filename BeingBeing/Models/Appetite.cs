@@ -8,7 +8,8 @@ namespace BeingBeing.Models
     public class Appetite
     {
         public int ID { get; set; }
-        public string State { get; set; }
+        public string Cat { get; set; } = "Appetite";
+        public string Type { get; set; }
         public string Notes { get; set; }
         public DateTime DateState { get; set; }
         public string Location { get; set; }

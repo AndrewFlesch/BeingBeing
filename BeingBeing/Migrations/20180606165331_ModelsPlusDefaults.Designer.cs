@@ -11,9 +11,10 @@ using System;
 namespace BeingBeing.Migrations
 {
     [DbContext(typeof(BeingBeingContext))]
-    partial class BeingBeingContextModelSnapshot : ModelSnapshot
+    [Migration("20180606165331_ModelsPlusDefaults")]
+    partial class ModelsPlusDefaults
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
