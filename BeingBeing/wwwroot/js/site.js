@@ -82,15 +82,32 @@ $(".entrysection .btn").click(function () {
     let header = $(this).val();
     let headerstring = "I'm " + header;
     $(".modal-title").text(headerstring);
-    $("input[name='type']").val($(this).val());
-    $("input[name='datestate']").val(moment().format('YYYY-MM-DDTHH:mm:ss'));
+    $(".type").val($(this).val());
+    $(".datestate").val(moment().format('YYYY-MM-DDTHH:mm:ss'));
 
 });
 
 $(".location .btn").click(function () {
-    $("input[name='location']").val($(this).val());
+    $(".loc").val($(this).val());
 
 });
+
+$(".poopcolor .btn").click(function () {
+    $(".pcolor").val($(this).val());
+
+});
+
+$(".socialwhere .btn").click(function () {
+    $(".swhere").val($(this).val());
+
+});
+
+$(".socialwith .btn").click(function () {
+    $(".swith").val($(this).val());
+
+});
+
+
 
 $(".locationbuttons .btn").click(function () {
     $(".locationbuttons button").css("border", "none");

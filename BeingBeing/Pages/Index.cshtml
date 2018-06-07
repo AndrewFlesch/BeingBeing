@@ -42,9 +42,10 @@
     <button type="button" class="btn" value="Pooping" name="Pooping" data-toggle="modal" data-target="#poopingModal">Pooping</button>
     <button type="button" class="btn" value="Socializing" name="Socializing" data-toggle="modal" data-target="#socializingModal">Socializing</button>
     <button type="button" class="btn" value="Working" name="Working" data-toggle="modal" data-target="#workingModal">Working</button>
-    <button type="button" class="btn" value="Sleeping" name="Sleeping" data-toggle="modal" data-target="#sleepingModal">Sleeping</button>
+    <button type="button" class="btn" value="Sleeping" name="Sleeping" data-toggle="modal" data-target="#sleepingModal">Sleep</button>
 
 </div>
+
 <!-- Modal for Mood-->
 <div class="modal fade" id="moodModal" tabindex="-1" role="dialog" aria-labelledby="moodModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -67,8 +68,8 @@
                 </div>
                 <form method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input asp-for="EmotionalStates.Type" class="form-control" name="type" />
-                    <input asp-for="EmotionalStates.Location" class="form-control" name="location" />
+                    <input asp-for="EmotionalStates.Type" class="form-control type" />
+                    <input asp-for="EmotionalStates.Location" class="form-control loc" />
 
                     <div class="form-group">
                         <label asp-for="EmotionalStates.Notes" class="control-label"></label>
@@ -78,10 +79,10 @@
 
                     <div class="form-group">
                         <label asp-for="EmotionalStates.DateState" class="control-label">When</label>
-                        <input asp-for="EmotionalStates.DateState" type="datetime-local" name="datestate" class="form-control" />
+                        <input asp-for="EmotionalStates.DateState" type="datetime-local" class="form-control datestate" />
                         <span asp-validation-for="EmotionalStates.DateState" class="text-danger"></span>
                     </div>
-                    <input type="submit" asp-page-handler="AddState" value="Submit" class="btn btn-default" />
+                    <input type="submit" asp-page-handler="AddMood" value="Submit" class="btn btn-default" />
 
                 </form>
 
@@ -115,8 +116,8 @@
                 </div>
                 <form method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input asp-for="Appetite.Type" class="form-control" name="type" />
-                    <input asp-for="Appetite.Location" class="form-control" name="location" />
+                    <input asp-for="Appetite.Type" class="form-control type" />
+                    <input asp-for="Appetite.Location" class="form-control loc" />
 
                     <div class="form-group">
                         <label asp-for="Appetite.Notes" class="control-label"></label>
@@ -126,7 +127,7 @@
 
                     <div class="form-group">
                         <label asp-for="Appetite.DateState" class="control-label">When</label>
-                        <input asp-for="Appetite.DateState" type="datetime-local" name="datestate" class="form-control" />
+                        <input asp-for="Appetite.DateState" type="datetime-local" class="form-control datestate" />
                         <span asp-validation-for="Appetite.DateState" class="text-danger"></span>
                     </div>
                     <input type="submit" asp-page-handler="AddAppetite" value="Submit" class="btn btn-default" />
@@ -163,8 +164,8 @@
                 </div>
                 <form method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input asp-for="Sickness.Type" class="form-control" name="type" />
-                    <input asp-for="Sickness.Location" class="form-control" name="location" />
+                    <input asp-for="Sickness.Type" class="form-control type" />
+                    <input asp-for="Sickness.Location" class="form-control loc" />
 
                     <div class="form-group">
                         <label asp-for="Sickness.Notes" class="control-label"></label>
@@ -174,10 +175,10 @@
 
                     <div class="form-group">
                         <label asp-for="Sickness.DateState" class="control-label">When</label>
-                        <input asp-for="Sickness.DateState" type="datetime-local" name="datestate" class="form-control" />
+                        <input asp-for="Sickness.DateState" type="datetime-local" class="form-control datestate" />
                         <span asp-validation-for="Sickness.DateState" class="text-danger"></span>
                     </div>
-                    <input type="submit" asp-page-handler="AddState" value="Submit" class="btn btn-default" />
+                    <input type="submit" asp-page-handler="AddSickness" value="Submit" class="btn btn-default" />
 
                 </form>
 
@@ -240,8 +241,8 @@
                 </div>
                 <form method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input asp-for="Consuming.Type" class="form-control" name="type" />
-                    <input asp-for="Consuming.Location" class="form-control" name="location" />
+                    <input asp-for="Consuming.Type" class="form-control type" />
+                    <input asp-for="Consuming.Location" class="form-control loc" />
 
                     <input asp-for="Consuming.Beans" class="form-control" id="Beans" />
                     <input asp-for="Consuming.Bread" class="form-control" id="Bread" />
@@ -277,10 +278,10 @@
 
                     <div class="form-group">
                         <label asp-for="Sickness.DateState" class="control-label">When</label>
-                        <input asp-for="Sickness.DateState" type="datetime-local" name="datestate" class="form-control" />
+                        <input asp-for="Sickness.DateState" type="datetime-local" class="form-control datestate" />
                         <span asp-validation-for="Sickness.DateState" class="text-danger"></span>
                     </div>
-                    <input type="submit" asp-page-handler="AddState" value="Submit" class="btn btn-default" />
+                    <input type="submit" asp-page-handler="AddConsumption" value="Submit" class="btn btn-default" />
 
                 </form>
 
@@ -292,7 +293,6 @@
 </div>
 
 <!-- End Modal for Eating-->
-
 <!-- Modal for Exercise-->
 <div class="modal fade" id="exercisingModal" tabindex="-1" role="dialog" aria-labelledby="exercisingModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -304,7 +304,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="exercisetype">
+                <div class="entrysection">
                     <div class="buttonheader">Type?</div>
                     <button type="button" class="btn" value="Walking">Walking</button>
                     <button type="button" class="btn" value="Running">Running</button>
@@ -329,7 +329,7 @@
                 </div>
                 <form method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input asp-for="Exercise.Type" class="form-control" name="type" />
+                    <input asp-for="Exercise.Type" class="form-control type" />
 
                     <div class="form-group">
                         <label asp-for="Exercise.Notes" class="control-label"></label>
@@ -342,7 +342,7 @@
                         <input asp-for="Exercise.DateState" type="datetime-local" name="datestate" class="form-control" />
                         <span asp-validation-for="Exercise.DateState" class="text-danger"></span>
                     </div>
-                    <input type="submit" asp-page-handler="AddState" value="Submit" class="btn btn-default" />
+                    <input type="submit" asp-page-handler="AddExercise" value="Submit" class="btn btn-default" />
 
                 </form>
 
@@ -354,3 +354,289 @@
 </div>
 
 <!-- End Modal for Exercise-->
+<!-- Modal for Pills-->
+<div class="modal fade" id="pillsModal" tabindex="-1" role="dialog" aria-labelledby="pillsModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="stateModalLabel"></h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="entrysection">
+                    <div class="buttonheader">Pill?</div>
+                    <button type="button" class="btn" value="Acetamphine">Acetamphine</button>
+                    <button type="button" class="btn" value="Advil">Advil</button>
+                    <button type="button" class="btn" value="Clariton">Clariton</button>
+                    <button type="button" class="btn" value="Pepcide">Pepcid</button>
+                    <button type="button" class="btn" value="Tylenol">Tylenol</button>
+                    <button type="button" class="btn" value="Tums">Tums</button>
+                    <button type="button" class="btn" value="Zyrtec">Zyrtec</button>
+                </div>
+                <div class="pillsdose">
+                    <div class="buttonheader">Dose</div>
+                    <input asp-for="Pills.Dose" class="form-control" />
+
+                </div>
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="Pills.Type" class="form-control type" />
+
+                    <div class="form-group">
+                        <label asp-for="Pills.Notes" class="control-label"></label>
+                        <textarea asp-for="Pills.Notes" class="form-control"></textarea>
+                        <span asp-validation-for="Pills.Notes" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Pills.DateState" class="control-label">When</label>
+                        <input asp-for="Pills.DateState" type="datetime-local" class="form-control datestate" />
+                        <span asp-validation-for="Pills.DateState" class="text-danger"></span>
+                    </div>
+                    <input type="submit" asp-page-handler="AddPills" value="Submit" class="btn btn-default" />
+
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- End Modal for Pills-->
+<!-- Modal for Poop-->
+<div class="modal fade" id="poopingModal" tabindex="-1" role="dialog" aria-labelledby="poopingModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="stateModalLabel"></h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="entrysection">
+                    <div class="buttonheader">Type?</div>
+                    <button type="button" class="btn" value="Normal">Normal</button>
+                    <button type="button" class="btn" value="Loose">Loose</button>
+                    <button type="button" class="btn" value="Diarrhea">Diarrhea</button>
+                    <button type="button" class="btn" value="Hard/Difficult">Hard/Difficult</button>
+                </div>
+                <div class="poopcolor">
+                    <div class="buttonheader">Color</div>
+                    <button type="button" class="btn" value="Brown">Brown</button>
+                    <button type="button" class="btn" value="Green">Green</button>
+                    <button type="button" class="btn" value="Yellow">Black</button>
+                    <button type="button" class="btn" value="Black">Black</button>
+                    <button type="button" class="btn" value="Light">Light Colored White Clay</button>
+                    <button type="button" class="btn" value="Red">Red or Red Streaks</button>
+                </div>
+                <div class="poopdensity">
+                    <div class="buttonheader">Density</div>
+                    <button type="button" class="btn" value="Normal">Normal</button>
+                    <button type="button" class="btn" value="Floats">Floats</button>
+                </div>
+
+                <form method="post">
+                    <input asp-for="Poop.Color" class="form-control pcolor" />
+                    <input asp-for="Poop.Density" class="form-control pdensity" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="Poop.Type" class="form-control type" />
+
+                    <div class="form-group">
+                        <label asp-for="Poop.Notes" class="control-label"></label>
+                        <textarea asp-for="Poop.Notes" class="form-control"></textarea>
+                        <span asp-validation-for="Poop.Notes" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Pills.DateState" class="control-label">When</label>
+                        <input asp-for="Pills.DateState" type="datetime-local" class="form-control datestate" />
+                        <span asp-validation-for="Pills.DateState" class="text-danger"></span>
+                    </div>
+                    <input type="submit" asp-page-handler="AddPoop" value="Submit" class="btn btn-default" />
+
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End Modal for Poop-->
+<!-- Modal for Social-->
+<div class="modal fade" id="socializingModal" tabindex="-1" role="dialog" aria-labelledby="socializingModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="stateModalLabel"></h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="entrysection">
+                    <div class="buttonheader">What?</div>
+                    <button type="button" class="btn" value="Birthday Party">Birthday Party</button>
+                    <button type="button" class="btn" value="Concert">Concert</button>
+                    <button type="button" class="btn" value="Dancing">Dancing</button>
+                    <button type="button" class="btn" value="Dinner">Dinner</button>
+                    <button type="button" class="btn" value="Drinks">Drinks</button>
+                    <button type="button" class="btn" value="Movie">Movie</button>
+                    <button type="button" class="btn" value="Museam">Museam</button>
+                    <button type="button" class="btn" value="Park">Park</button>
+                    <button type="button" class="btn" value="Party">Party</button>
+                    <button type="button" class="btn" value="Sporting Event">Sporting Event</button>
+                    <button type="button" class="btn" value="Theater">Theater</button>
+                    <button type="button" class="btn" value="Wedding">Wedding</button>
+                    <button type="button" class="btn" value="Zoo">Zoo</button>
+
+                </div>
+                <div class="socialwith">
+                    <div class="buttonheader">With</div>
+                    <button type="button" class="btn" value="Alone">Alone</button>
+                    <button type="button" class="btn" value="Date">Date</button>
+                    <button type="button" class="btn" value="Friend(s)">Friend(s)</button>
+                    <button type="button" class="btn" value="Spouse">Spouse</button>
+                    <button type="button" class="btn" value="Family">Family</button>
+                    <button type="button" class="btn" value="Coworkers">Coworkers</button>
+                    <button type="button" class="btn" value="Extended Family">Extended Family</button>
+
+                </div>
+                <div class="socialwhere">
+                    <div class="buttonheader">Where</div>
+                    <button type="button" class="btn" value="Bar">Bar</button>
+                    <button type="button" class="btn" value="Club">Club</button>
+                    <button type="button" class="btn" value="House">House</button>
+                    <button type="button" class="btn" value="Movie">Movie</button>
+                    <button type="button" class="btn" value="Restaurant">Restaurant</button>
+                    <button type="button" class="btn" value="Stadium">Stadium</button>
+                    <button type="button" class="btn" value="Theater">Theater</button>
+                    <button type="button" class="btn" value="Work">Work</button>
+                </div>
+
+                <form method="post">
+                    <input asp-for="Social.Where" class="form-control swhere" />
+                    <input asp-for="Social.With" class="form-control swith" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="Social.Type" class="form-control type" />
+
+                    <div class="form-group">
+                        <label asp-for="Social.Notes" class="control-label"></label>
+                        <textarea asp-for="Social.Notes" class="form-control"></textarea>
+                        <span asp-validation-for="Social.Notes" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Social.DateState" class="control-label">When</label>
+                        <input asp-for="Social.DateState" type="datetime-local" class="form-control datestate" />
+                        <span asp-validation-for="Social.DateState" class="text-danger"></span>
+                    </div>
+                    <input type="submit" asp-page-handler="AddSocial" value="Submit" class="btn btn-default" />
+
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End Modal for Social-->
+<!-- Modal for Working-->
+<div class="modal fade" id="workingModal" tabindex="-1" role="dialog" aria-labelledby="workingModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="stateModalLabel"></h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="buttonheader">What are you working on?</div>
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="Working.Type" class="form-control type" />
+                    <label asp-for="Working.Duration" class="control-label"></label>
+                    <input asp-for="Working.Duration" class="form-control swhere" />
+                    <div class="form-group">
+                        <label asp-for="Working.Notes" class="control-label"></label>
+                        <textarea asp-for="Working.Notes" class="form-control"></textarea>
+                        <span asp-validation-for="Working.Notes" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Working.DateState" class="control-label">When</label>
+                        <input asp-for="Working.DateState" type="datetime-local" class="form-control datestate" />
+                        <span asp-validation-for="Working.DateState" class="text-danger"></span>
+                    </div>
+                    <input type="submit" asp-page-handler="AddSocial" value="Submit" class="btn btn-default" />
+
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End Modal for Work-->
+<!-- Modal for Sleeping-->
+<div class="modal fade" id="sleepingModal" tabindex="-1" role="dialog" aria-labelledby="sleepingModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="stateModalLabel"></h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="entrysection">
+                    <div class="buttonheader">How did you sleep?</div>
+                    <button type="button" class="btn" value="Good">Good</button>
+                    <button type="button" class="btn" value="Interupted">Interupted</button>
+                    <button type="button" class="btn" value="Restless">Restless</button>
+                    <button type="button" class="btn" value="Trouble falling asleep">Trouble falling asleep</button>
+                    <button type="button" class="btn" value="Trouble waking up">Trouble waking up</button>
+                </div>
+                
+
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Sleep.Type" class="form-control type" />
+
+                    <div class="form-group">
+                        <label asp-for="Sleep.WentDown" class="control-label">Went Down</label>
+                        <input asp-for="Sleep.WentDown" type="datetime-local" class="form-control datestate" />
+                        <span asp-validation-for="Sleep.WentDown" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Sleep.WokeUp" class="control-label">Woke Up</label>
+                        <input asp-for="Sleep.WokeUp" type="datetime-local" class="form-control datestate" />
+                        <span asp-validation-for="Sleep.WokeUp" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Social.Notes" class="control-label"></label>
+                        <textarea asp-for="Social.Notes" class="form-control"></textarea>
+                        <span asp-validation-for="Social.Notes" class="text-danger"></span>
+                    </div>
+
+
+                    <input type="submit" asp-page-handler="AddSocial" value="Submit" class="btn btn-default" />
+
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End Modal for Sleeping-->

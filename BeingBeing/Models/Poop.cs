@@ -12,5 +12,6 @@ namespace BeingBeing.Models
         public string Type { get; set; }
         public string Color { get; set; }
         public string Density { get; set; }
+        public string Notes { get; set; }
     }
 }

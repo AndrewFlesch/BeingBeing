@@ -11,9 +11,10 @@ using System;
 namespace BeingBeing.Migrations
 {
     [DbContext(typeof(BeingBeingContext))]
-    partial class BeingBeingContextModelSnapshot : ModelSnapshot
+    [Migration("20180607191116_ChangedSocial")]
+    partial class ChangedSocial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -221,13 +222,9 @@ namespace BeingBeing.Migrations
 
                     b.Property<int>("Duration");
 
-                    b.Property<string>("Notes");
+                    b.Property<string>("Quality");
 
                     b.Property<string>("Type");
-
-                    b.Property<DateTime>("WentDown");
-
-                    b.Property<DateTime>("WokeUp");
 
                     b.HasKey("ID");
 

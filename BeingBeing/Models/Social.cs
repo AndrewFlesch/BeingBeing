@@ -10,8 +10,8 @@ namespace BeingBeing.Models
         public int ID { get; set; }
         public string Cat { get; set; } = "Social";
         public string Type { get; set; }
+        public string With { get; set; }
         public string Where { get; set; }
-        public int Duration { get; set; }
         public string Notes { get; set; }
         public DateTime DateState { get; set; }
     }
