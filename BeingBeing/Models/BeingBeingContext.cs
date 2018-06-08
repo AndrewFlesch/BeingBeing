@@ -23,6 +23,7 @@ namespace BeingBeing.Models
         public DbSet<Sickness> Sickness { get; set; }
         public DbSet<Sleep> Sleep { get; set; }
         public DbSet<Social> Social { get; set; }
+        public DbSet<Stats> Stats { get; set; }
         public DbSet<Weather> Weather { get; set; }
         public DbSet<Working> Working { get; set; }
     

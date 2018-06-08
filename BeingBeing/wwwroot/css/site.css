@@ -69,7 +69,7 @@ body {
     box-shadow: lightgray 1px 1px;
     margin: 1px;
 }
-.modal-title {
+.modal-title-h1 {
 display:inline;
 }
 
@@ -131,5 +131,16 @@ display:inline;
 }
 .duration {
     width:20px;
+}
+.stats {
+    width:50px;
+    float:left;
+}
+
+.formsection {
+    border-bottom: 2px solid black;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    max-width: 600px;
 }
 

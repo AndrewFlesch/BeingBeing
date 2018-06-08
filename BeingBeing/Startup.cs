@@ -26,6 +26,7 @@ namespace BeingBeing
             services.AddDbContext<BeingBeingContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("BeingBeing")));
             services.AddMvc();
+            services.AddIdentityCore<string>(options => { });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

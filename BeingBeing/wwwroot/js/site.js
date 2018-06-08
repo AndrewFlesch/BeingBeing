@@ -80,8 +80,7 @@ $(".entrysection .btn").click(function () {
     let inputtype = "#" + this.name;
     $(inputtype).val($(this).val());
     let header = $(this).val();
-    let headerstring = "I'm " + header;
-    $(".modal-title").text(headerstring);
+    $(".modal-title").text(header);
     $(".type").val($(this).val());
     $(".datestate").val(moment().format('YYYY-MM-DDTHH:mm:ss'));
 

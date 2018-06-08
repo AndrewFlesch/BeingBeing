@@ -31,6 +31,7 @@ namespace BeingBeing.Pages
         public Poop Poop { get; set; }
         public Sickness Sickness { get; set; }
         public Sleep Sleep { get; set; }
+        public Stats Stats { get; set; }
         public Social Social { get; set; }
         public Weather Weather { get; set; }
         public Working Working { get; set; }

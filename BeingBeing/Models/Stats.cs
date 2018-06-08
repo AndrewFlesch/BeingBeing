@@ -8,6 +8,7 @@ namespace BeingBeing.Models
     public class Stats
     {
         public int ID { get; set; }
+        public string Cat { get; set; } = "Stats";
         public int Height { get; set; }
         public int Weight { get; set; }
         public int BodyFat { get; set; }
@@ -20,7 +21,6 @@ namespace BeingBeing.Models
         public int Chest { get; set; }
         public int Arms { get; set; }
         public int Legs { get; set; }
-        public int BirthYear { get; set; }
         public DateTime DateState { get; set; }
         public string Notes { get; set; }
     }
