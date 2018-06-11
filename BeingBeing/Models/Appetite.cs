@@ -7,6 +7,7 @@ namespace BeingBeing.Models
 {
     public class Appetite
     {
+        public string OwnerID { get; set; }
         public int ID { get; set; }
         public string Cat { get; set; } = "Appetite";
         public string Type { get; set; }

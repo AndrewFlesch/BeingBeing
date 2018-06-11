@@ -7,6 +7,7 @@ namespace BeingBeing.Models
 {
     public class EmotionalStates
     {
+        public string OwnerID { get; set; }
         public int ID { get; set; }
         public string Cat { get; set; } = "Mood";
         public string Type { get; set; }

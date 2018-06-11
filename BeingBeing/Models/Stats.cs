@@ -7,6 +7,7 @@ namespace BeingBeing.Models
 {
     public class Stats
     {
+        public string OwnerID { get; set; }
         public int ID { get; set; }
         public string Cat { get; set; } = "Stats";
         public int Height { get; set; }

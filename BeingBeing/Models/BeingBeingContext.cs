@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace BeingBeing.Models 
 {
+
     public class BeingBeingContext : DbContext
     {
+
         public BeingBeingContext(DbContextOptions<BeingBeingContext> options)
             : base(options)
         {
@@ -29,4 +32,6 @@ namespace BeingBeing.Models
     
 
     }
+
+
 }

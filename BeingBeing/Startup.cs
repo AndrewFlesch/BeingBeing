@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using BeingBeing.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace BeingBeing
 {
@@ -25,8 +26,13 @@ namespace BeingBeing
         {
             services.AddDbContext<BeingBeingContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("BeingBeing")));
+
+            services.AddDbContext<AppIdentityDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("BeingBeing")));
+
+            services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
+
             services.AddMvc();
-            services.AddIdentityCore<string>(options => { });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +51,8 @@ namespace BeingBeing
             app.UseStaticFiles();
 
             app.UseMvc();
+
+            app.UseAuthentication();
         }
     }
 }
