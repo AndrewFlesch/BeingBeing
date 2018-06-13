@@ -32,7 +32,14 @@ namespace BeingBeing
 
             services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
 
-            services.AddMvc();
+            services.AddMvc()
+                 .AddRazorPagesOptions(options =>
+                 {
+                     options.Conventions.AuthorizeFolder("/Account/Manage");
+                     options.Conventions.AuthorizePage("/Account/Logout");
+                 });
+
+            services.AddSingleton<IEmailSender, EmailSender>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
