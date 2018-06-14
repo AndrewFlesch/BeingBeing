@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using BeingBeing.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BeingBeing.Pages.Account
 {

@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using BeingBeing.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BeingBeing.Pages
 {
+    [AllowAnonymous]
     public class IndexModel : PageModel
     {
         public void OnGet()

@@ -10,9 +10,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using BeingBeing.Models;
 using BeingBeing.Services;
 using BeingBeing.Extensions;
+using Microsoft.AspNetCore.Authorization;
 
-namespace WebApplication3.Pages.Account.Manage
+namespace BeingBeing.Pages.Account.Manage
 {
+   
     public partial class IndexModel : PageModel
     {
         private readonly UserManager<AppUser> _userManager;

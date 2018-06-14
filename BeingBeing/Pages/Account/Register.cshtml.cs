@@ -10,9 +10,11 @@ using Microsoft.Extensions.Logging;
 using BeingBeing.Models;
 using BeingBeing.Services;
 using BeingBeing.Extensions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BeingBeing.Pages.Account
 {
+    [AllowAnonymous]
     public class RegisterModel : PageModel
     {
         private readonly SignInManager<AppUser> _signInManager;

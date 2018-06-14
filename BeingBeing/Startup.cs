@@ -9,6 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using BeingBeing.Models;
 using Microsoft.AspNetCore.Identity;
+using BeingBeing.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace BeingBeing
 {
@@ -30,14 +33,16 @@ namespace BeingBeing
             services.AddDbContext<AppIdentityDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("BeingBeing")));
 
-            services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
+            services.AddIdentity<AppUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppIdentityDbContext>()
+                .AddDefaultTokenProviders();
 
             services.AddMvc()
-                 .AddRazorPagesOptions(options =>
-                 {
-                     options.Conventions.AuthorizeFolder("/Account/Manage");
-                     options.Conventions.AuthorizePage("/Account/Logout");
-                 });
+            .AddRazorPagesOptions(options =>
+            {
+                options.Conventions.AuthorizeFolder("/Account/Manage");
+                options.Conventions.AuthorizePage("/Account/Logout");
+            });
 
             services.AddSingleton<IEmailSender, EmailSender>();
         }

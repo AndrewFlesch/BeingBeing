@@ -96,7 +96,7 @@ namespace WebApplication3.Pages.Account.Manage
             return RedirectToPage("./ShowRecoveryCodes");
         }
 
-        private async Task LoadSharedKeyAndQrCodeUriAsync(ApplicationUser user)
+        private async Task LoadSharedKeyAndQrCodeUriAsync(AppUser user)
         {
             // Load the authenticator key & QR code URI to display on the form
             var unformattedKey = await _userManager.GetAuthenticatorKeyAsync(user);
