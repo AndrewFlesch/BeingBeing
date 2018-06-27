@@ -6,22 +6,26 @@ using BeingBeing.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using BeingBeing.Data;
+using BeingBeing.Authorization;
 
 namespace BeingBeing.Pages
 {
-    [AllowAnonymous]
-    public class IndexModel : PageModel
+    public class IndexModel : DI_BasePageModel
     {
         public void OnGet()
         {
 
         }
 
-        private readonly BeingBeing.Models.BeingBeingContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public IndexModel(BeingBeing.Models.BeingBeingContext context)
+        public IndexModel(ApplicationDbContext context,
+        IAuthorizationService authorizationService,
+        UserManager<AppUser> userManager)
+        : base(context, authorizationService, userManager)
         {
-            _context = context;
         }
 
         [BindProperty]
@@ -37,7 +41,9 @@ namespace BeingBeing.Pages
         public Social Social { get; set; }
         public Weather Weather { get; set; }
         public Working Working { get; set; }
-       
+
+
+        [Authorize]
         public async Task<IActionResult> OnPostAddAppetiteAsync()
         {
             if (!ModelState.IsValid)
@@ -45,8 +51,20 @@ namespace BeingBeing.Pages
                 return Page();
             }
 
-            _context.Appetite.Add(Appetite);
-            await _context.SaveChangesAsync();
+            Appetite.OwnerID = UserManager.GetUserId(User);
+
+            // requires using ContactManager.Authorization;
+            var isAuthorized = await AuthorizationService.AuthorizeAsync(
+                                            User, Appetite,
+                                            Operations.Create);
+
+            if (!isAuthorized.Succeeded)
+            {
+                return new ChallengeResult();
+            }
+
+            Context.Appetite.Add(Appetite);
+            await Context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
@@ -58,6 +76,8 @@ namespace BeingBeing.Pages
             {
                 return Page();
             }
+
+
 
             _context.EmotionalStates.Add(EmotionalStates);
             await _context.SaveChangesAsync();

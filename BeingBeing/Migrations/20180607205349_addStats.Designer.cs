@@ -7,10 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
+using BeingBeing.Data;
 
 namespace BeingBeing.Migrations
 {
-    [DbContext(typeof(BeingBeingContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20180607205349_addStats")]
     partial class addStats
     {

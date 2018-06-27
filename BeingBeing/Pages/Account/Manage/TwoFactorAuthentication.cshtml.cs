@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using BeingBeing.Models;
 
-namespace WebApplication3.Pages.Account.Manage
+namespace BeingBeing.Pages.Account.Manage
 {
     public class TwoFactorAuthenticationModel : PageModel
     {
